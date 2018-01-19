@@ -1,0 +1,7 @@
+<h1>Users</h1>
+<% @users.each do |user| %>
+  <div class="card card-block bg-faded">
+    <h3><%= user.email %></h3>
+    <p><%= user.username %></p>
+  </div>
+<% end %>

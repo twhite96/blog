@@ -1,0 +1,29 @@
+<h1 class="mx-5">New User</h1>
+<!-- Rails form consisting of form for post controller and the url to the post route -->
+<%= form_for :user, url: users_path do |f| %>
+ <!--check for errors -->
+  <% if @users.errors.any? %>
+  <!-- loop through error messages and print to screen -->
+    <% @users.errors.full_messages.each do |msg| %>
+    <!-- bootstrap alert -->
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+  <!-- form lable with title attribute we will use in the show route with Bootstrap 4 margin class-->
+    <%= f.label :email, {:class => 'mx-5'} %><br>
+    <!-- Text field with Bootstrap form control class and margin class -->
+    <%= f.text_field :email, {:class => 'form-control mx-5 pl-4'} %>
+  </p>
+  <p>
+  <!-- form lable with title attribute we will use in the show route with Bootstrap 4 margin class-->
+    <%= f.label :username, {:class => 'mx-5'} %><br>
+    <!-- Text field with Bootstrap form control class and margin class -->
+    <%= f.text_field :username, {:class => 'form-control mx-5 pl-4'} %>
+  </p>
+
+  <p>
+  <!-- form submit button with bootstrap class -->
+    <%= f.submit({:class => 'btn btn-info m-5' })%>
+  </p>
+<% end %>

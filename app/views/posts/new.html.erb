@@ -1,0 +1,31 @@
+<h1 class="mx-5">Add Post</h1>
+<!-- Rails form consisting of form for post controller and the url to the post route -->
+<%= form_for :post, url: posts_path do |f| %>
+ <!--check for errors -->
+  <% if @post.errors.any? %>
+  <!-- loop through error messages and print to screen -->
+    <% @post.errors.full_messages.each do |msg| %>
+    <!-- bootstrap alert -->
+      <div class="alert alert-danger"><%= msg %></div>
+  <% end %>
+<% end %>
+  <p>
+  <!-- form lable with title attribute we will use in the show route with Bootstrap 4 margin class-->
+    <%= f.label :title, {:class => 'mx-5'} %><br>
+    <!-- Text field with Bootstrap form control class and margin class -->
+    <%= f.text_field :title, {:class => 'form-control mx-5 pl-4'} %>
+  </p>
+  <p>
+    <%= f.label :text, {:class => 'mx-5'} %><br>
+    <%= f.text_area :body, {:class => 'form-control mx-5 pl-4'} %>
+  </p>
+  <p>
+    <%= f.label :username, {:class => 'mx-5'} %><br>
+    <%= f.text_field :user_id, {:class => 'form-control mx-5 pl-4'} %>
+  </p>
+
+  <p>
+  <!-- form submit button with bootstrap class -->
+    <%= f.submit({:class => 'btn btn-info m-5' })%>
+  </p>
+<% end %>

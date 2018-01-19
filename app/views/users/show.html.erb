@@ -1,0 +1,15 @@
+<h2><%= @users.email %></h2>
+<p><%= @users.username %></p>
+<hr>
+<div class="col-md-8">
+    <% if @users.posts.any? %>
+      <h3>Posts (<%= @users.posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+    <% end %>
+</div>
+<%= link_to "Delete", users_path(@user),
+method: :delete,
+data: {confirm: 'Are you sure?'},
+:class => 'btn btn-danger' %>

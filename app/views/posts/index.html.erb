@@ -1,0 +1,9 @@
+<h1>Blog posts</h1>
+<% @posts.each do |post| %>
+  <div class="card card-block bg-faded m-5">
+    <h3 class="ml-5"><%= post.title %></h3>
+    <p class="ml-5"><%= post.body %></p>
+    <span class="ml-5"><%= Date.today %></span>
+    <%= link_to "Continue", post_path(post), :class => 'btn btn-info m-5' %>
+  </div>
+<% end %>

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+# source "https://rails-assets.org"
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'haml-rails'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+# gem 'rails-assets-bootstrap'
+# gem 'rails-assets-tether'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
